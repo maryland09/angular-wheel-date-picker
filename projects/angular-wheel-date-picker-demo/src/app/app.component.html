@@ -1,2 +1,9 @@
-Hello, world!
-<angular-wheel-date-picker></angular-wheel-date-picker>
+<h1>Angular wheel date picker demo:</h1>
+<br>
+<angular-wheel-date-picker
+  [minYear]="1960"
+  [maxYear]="2040"
+  (dateChange)="selectDate($event)"
+/>
+<br>
+<div class="selected-date">Selected date: <b>{{ myDate | date: 'dd/MM/yyyy' }}</b></div>

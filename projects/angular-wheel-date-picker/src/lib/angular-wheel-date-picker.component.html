@@ -1,0 +1,24 @@
+<div class="picker-wrapper">
+  <div class="picker-title">{{ selectedDay }} / {{ selectedMonth }} / {{ selectedYear }}</div>
+  <div class="picker-container">
+    <!--  DAY-->
+    <div class="picker-wheel" #dayWheel (scroll)="onScroll()">
+      <div *ngFor="let item of days; let i = index" class="picker-item" [class.selected]="item === selectedDay">
+        {{ item }}
+      </div>
+    </div>
+    <!--  MONTH-->
+    <div class="picker-wheel" #monthWheel (scroll)="onScroll()">
+      <div *ngFor="let item of months; let i = index" class="picker-item" [class.selected]="item === selectedMonth">
+        {{ item }}
+      </div>
+    </div>
+    <!--  YEAR-->
+    <div class="picker-wheel" #yearWheel (scroll)="onScroll()">
+      <div *ngFor="let item of years; let i = index" class="picker-item" [class.selected]="item === selectedYear">
+        {{ item }}
+      </div>
+    </div>
+  </div>
+  <button class="picker-btn" (click)="selectDate()">Select</button>
+</div>
