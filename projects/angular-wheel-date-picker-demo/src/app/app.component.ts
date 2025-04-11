@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AngularWheelDatePickerComponent } from "angular-wheel-date-picker";
 import { DatePipe } from "@angular/common";
+import { AngularWheelDatePicker } from "../../../angular-wheel-date-picker/src/lib/angular-wheel-date-picker.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    AngularWheelDatePickerComponent,
+    AngularWheelDatePicker,
     DatePipe
   ],
   templateUrl: './app.component.html',

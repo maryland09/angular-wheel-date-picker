@@ -1,24 +1,73 @@
-# AngularWheelDatePicker
+# Angular Wheel Date Picker
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+A date picker component for Angular applications that features a scrollable wheel interface similar to native mobile date pickers.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name --project angular-wheel-date-picker` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-wheel-date-picker`.
-> Note: Don't forget to add `--project angular-wheel-date-picker` or else it will be added to the default project in your `angular.json` file. 
+- Intuitive wheel-style date selection
+- Smooth scrolling experience
+- Mobile-friendly touch interface
+- Customizable year range
 
-## Build
+## Installation
+npm install angular-wheel-date-picker --save
 
-Run `ng build angular-wheel-date-picker` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Basic Usage
 
-## Publishing
+```typescript
+import {Component} from '@angular/core';
+import {AngularWheelDatePicker} from "angular-wheel-date-picker";
+import {DatePipe} from "@angular/common";
 
-After building your library with `ng build angular-wheel-date-picker`, go to the dist folder `cd dist/angular-wheel-date-picker` and run `npm publish`.
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    AngularWheelDatePicker,
+    DatePipe
+  ],
+  template: `
+    <angular-wheel-date-picker
+      [minYear]="1960"
+      [maxYear]="2040"
+      (dateChange)="selectDate($event)">
+    </angular-wheel-date-picker>
+    <p>Selected date: {{ myDate | date: 'dd/MM/yyyy' }}<p>
+  `,
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  myDate?: Date;
 
-## Running unit tests
+  selectDate(date: Date) {
+    this.myDate = date;
+  }
+}
+```
 
-Run `ng test angular-wheel-date-picker` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Inputs
+| Input | Type | Default | Description |
+|-------|------|---------|-------------|
+| `minYear` | number | Current year - 50 | Minimum year displayed in the year wheel |
+| `maxYear` | number | Current year + 10 | Maximum year displayed in the year wheel |
 
-## Further help
+## Outputs
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Output | Type               | Description |
+|--------|--------------------|-------------|
+| `dateChange` | EventEmitter&lt;Date&gt; | Emits the selected date when the user changes it |
+
+
+# Requirements
+
+- Angular 15.0.0 or higher
+- dayjs
+
+# Browser Support
+This component supports all modern browsers.
+
+# Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+# License
+MIT

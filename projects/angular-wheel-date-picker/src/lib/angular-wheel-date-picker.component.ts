@@ -10,7 +10,7 @@ import {CommonModule} from "@angular/common";
   templateUrl: './angular-wheel-date-picker.component.html',
   styleUrls: ['./angular-wheel-date-picker.component.scss'],
 })
-export class AngularWheelDatePickerComponent implements OnInit, AfterViewInit {
+export class AngularWheelDatePicker implements OnInit, AfterViewInit {
   @ViewChild('yearWheel') yearWheel!: ElementRef;
   @ViewChild('monthWheel') monthWheel!: ElementRef;
   @ViewChild('dayWheel') dayWheel!: ElementRef;
