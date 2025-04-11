@@ -1,6 +1,7 @@
 {
   "name": "angular-wheel-date-picker",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "description": "An Angular date picker with wheel-like functionality",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -36,5 +37,16 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^17.3.0",
     "typescript": "~5.4.2"
-  }
+  },
+  "keywords": [
+    "angular",
+    "datepicker",
+    "wheel",
+    "date-picker"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maryland09/angular-wheel-date-picker"
+  },
+  "license": "MIT"
 }
